@@ -4,7 +4,13 @@ from abc import abstractmethod
 
 class Vehicle(ABC):
 
-    def __init__(self, brand_name: str, year_of_issue: int, base_price: int, mileage: int):
+    def __init__(
+            self,
+            brand_name: str,
+            year_of_issue: int,
+            base_price: int,
+            mileage: int
+    ):
         pass
 
     def wheels_num(self):
