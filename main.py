@@ -3,7 +3,6 @@ from abc import ABC
 
 
 class Vehicle(ABC):
-
     def __init__(
             self,
             brand_name: str,
@@ -13,8 +12,8 @@ class Vehicle(ABC):
     ):
         pass
 
-    def wheels_num(self):
-        pass
+    def wheels_num(self) -> int:
+        return 0
 
     def vehicle_type(self) -> str:
         pass
@@ -28,19 +27,23 @@ class Vehicle(ABC):
 
 # Don't change class implementation
 class Car(Vehicle):
-    wheels_num = 4
+    def wheels_num(self):
+        return 4
 
 
 # Don't change class implementation
 class Motorcycle(Vehicle):
-    wheels_num = 2
+    def wheels_num(self):
+        return 2
 
 
 # Don't change class implementation
 class Truck(Vehicle):
-    wheels_num = 10
+    def wheels_num(self):
+        return 10
 
 
 # Don't change class implementation
 class Bus(Vehicle):
-    wheels_num = 6
+    def wheels_num(self):
+        return 6

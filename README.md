@@ -38,7 +38,7 @@ Put the following decorators where necessary and if it is necessary:
             print(
                 f"Vehicle type={vehicle.vehicle_type()}\n"
                 f"Is motorcycle={vehicle.is_motorcycle()}\n"
-                f"Purchase price={vehicle.purchase_price()}\n"
+                f"Purchase price={vehicle.purchase_price}\n"
             )
     
 
