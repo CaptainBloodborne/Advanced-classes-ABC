@@ -10,24 +10,27 @@ class Vehicle(ABC):
             base_price: int,
             mileage: int
     ):
-        self.brand_name = brand_name
-        self.year_of_issue = year_of_issue
-        self.base_price = base_price
-        self.mileage = mileage
+        self._brand_name = brand_name
+        self._year_of_issue = year_of_issue
+        self._base_price = base_price
+        self._mileage = mileage
+        self._purchase_price = self._base_price - 0.1 * self._mileage
 
     @abstractmethod
     def wheels_num(self) -> int:
         return 0
 
     def vehicle_type(self) -> str:
-        return f"{self.brand_name} {self.__class__.__name__}"
+        return f"{self._brand_name} {self.__class__.__name__}"
 
     def is_motorcycle(self) -> bool:
         return self.wheels_num() == 2
 
     @property
     def purchase_price(self) -> float:
-        return self.base_price - 0.1 * self.mileage
+        if self._purchase_price < 100_000:
+            return 100_000
+        return self._purchase_price
 
 
 # Don't change class implementation
